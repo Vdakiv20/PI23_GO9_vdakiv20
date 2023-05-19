@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace EvaluationManager_G09.Models {
-    public class Student {
+    public class Student : Person {
         public int Grade { get; set; }
     }
 }

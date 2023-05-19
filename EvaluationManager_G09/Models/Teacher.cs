@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace EvaluationManager_G09.Models {
-    public class Teacher {
+    public class Teacher : Person {
         public string Username { get; set; }
         public string Password { get; set; }
     }

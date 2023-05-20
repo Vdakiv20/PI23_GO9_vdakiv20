@@ -34,9 +34,11 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.numPoints = new System.Windows.Forms.NumericUpDown();
             this.label3 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.numPoints)).BeginInit();
             this.SuspendLayout();
             // 
             // cboActivities
@@ -47,6 +49,7 @@
             this.cboActivities.Name = "cboActivities";
             this.cboActivities.Size = new System.Drawing.Size(266, 24);
             this.cboActivities.TabIndex = 0;
+            this.cboActivities.SelectedIndexChanged += new System.EventHandler(this.cboActivities_SelectedIndexChanged);
             // 
             // lblActivity
             // 
@@ -134,12 +137,12 @@
             this.label2.TabIndex = 10;
             this.label2.Text = "Datum evaluacije:";
             // 
-            // numericUpDown1
+            // numPoints
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(668, 340);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(104, 22);
-            this.numericUpDown1.TabIndex = 11;
+            this.numPoints.Location = new System.Drawing.Point(668, 340);
+            this.numPoints.Name = "numPoints";
+            this.numPoints.Size = new System.Drawing.Size(104, 22);
+            this.numPoints.TabIndex = 11;
             // 
             // label3
             // 
@@ -150,13 +153,34 @@
             this.label3.TabIndex = 12;
             this.label3.Text = "Bodovi:";
             // 
+            // btnSave
+            // 
+            this.btnSave.Location = new System.Drawing.Point(490, 408);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(108, 31);
+            this.btnSave.TabIndex = 13;
+            this.btnSave.Text = "Spremi";
+            this.btnSave.UseVisualStyleBackColor = true;
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.Location = new System.Drawing.Point(644, 408);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(108, 31);
+            this.btnCancel.TabIndex = 14;
+            this.btnCancel.Text = "Odustani";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
             // FrmEvaluation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnCancel);
+            this.Controls.Add(this.btnSave);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.numericUpDown1);
+            this.Controls.Add(this.numPoints);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox2);
@@ -170,7 +194,8 @@
             this.Controls.Add(this.cboActivities);
             this.Name = "FrmEvaluation";
             this.Text = "FrmEvaluation";
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            this.Load += new System.EventHandler(this.FrmEvaluation_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.numPoints)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -189,7 +214,9 @@
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.NumericUpDown numPoints;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.Button btnCancel;
     }
 }
